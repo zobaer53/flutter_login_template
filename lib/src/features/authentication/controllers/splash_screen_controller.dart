@@ -1,19 +1,35 @@
 import 'package:flutter_login_app/src/features/authentication/screens/welcome/welcome_screen.dart';
 import 'package:get/get.dart';
 
-class SplashScreenController extends GetxController{
-  // we cam find this controller with get.find
+class SplashScreenController extends GetxController {
   static SplashScreenController get find => Get.find();
 
   RxBool animate = false.obs;
 
-  Future startAnimation() async {
-    await Future.delayed(const Duration(milliseconds: 500 ));
+  //To be used in Splash Screen due to auto calling of next activity.
+  Future startSplashAnimation() async {
+    await Future.delayed(const Duration(milliseconds: 500));
+    animate.value = true;
+    await Future.delayed(const Duration(milliseconds: 3000));
+    animate.value = false;
+    await Future.delayed(const Duration(milliseconds: 2000));
+    Get.off(
+      // Get.off Instead of Get.offAll()
+      () => const WelcomeScreen(),
+      duration: const Duration(milliseconds: 1000), //Transition Time
+      transition: Transition.fadeIn, //Screen Switch Transition
+    );
+  }
 
-      animate.value = true;
+  //Call where you need to animate In any widget.
+  Future animationIn() async {
+    await Future.delayed(const Duration(milliseconds: 500));
+    animate.value = true;
+  }
 
-    await Future.delayed(const Duration(milliseconds: 5000));
-    Get.to(const WelcomeScreen());
-    //Navigator.push(context, MaterialPageRoute(builder: (context) => WelcomeScreen()));
+  //Call where you need to animate Out any widget.
+  Future animationOut() async {
+    animate.value = false;
+    await Future.delayed(const Duration(milliseconds: 100));
   }
 }
