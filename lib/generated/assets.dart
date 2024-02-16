@@ -2,6 +2,9 @@
 class Assets {
   Assets._();
 
+  static const String onboardingOnboarding1 = 'assets/images/onboarding/onboarding_1.png';
+  static const String onboardingOnboarding2 = 'assets/images/onboarding/onboarding_2.png';
+  static const String onboardingOnboarding3 = 'assets/images/onboarding/onboarding_3.png';
   static const String splashScreenSplashScreenLaptopUsing = 'assets/images/splash_screen/splash_screen_laptop_using.png';
   static const String splashScreenSplashScreenTop = 'assets/images/splash_screen/splash_screen_top.png';
 

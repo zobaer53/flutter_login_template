@@ -6,7 +6,7 @@ import 'package:flutter_login_app/src/utils/theme/colors.dart';
 import 'package:get/get.dart';
 import '../../../../common_widget/fadein_animation_widget.dart';
 import '../../../../constants/text_strings.dart';
-import '../../models/splash_model/splash_widget_model.dart';
+import '../../models/splash_widget_model.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});

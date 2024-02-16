@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_login_app/src/features/authentication/controllers/splash_screen_controller.dart';
-import 'package:flutter_login_app/src/features/authentication/models/splash_model/splash_widget_model.dart';
 import 'package:get/get.dart';
+
+import '../features/authentication/models/splash_widget_model.dart';
 
 class ZFadeInAnimation extends StatelessWidget {
   ZFadeInAnimation({
