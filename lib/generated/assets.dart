@@ -2,7 +2,7 @@
 class Assets {
   Assets._();
 
-  static const String imagesSplashBackground = 'assets/images/splash_background.jpg';
+  static const String imagesSplashScreen1 = 'assets/images/splash_screen1.png';
   static const String imagesSplashScreenLaptopUsing = 'assets/images/splash_screen_laptop_using.png';
 
 }
