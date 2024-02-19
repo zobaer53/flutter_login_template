@@ -1,10 +1,15 @@
 
+import 'dart:ui';
+
+import 'package:flutter/cupertino.dart';
+
 class OnBoardingModel{
   final String image;
   final String title;
   final String subTitle;
   final String counterText;
-  final String bgColor;
+  final Color bgColor;
+
 
   OnBoardingModel({
     required this.image,
