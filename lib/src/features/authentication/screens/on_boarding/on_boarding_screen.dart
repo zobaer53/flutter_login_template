@@ -12,6 +12,7 @@ class OnBoardingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size; // size of the device screen
     return Scaffold(
       body: Stack(
         children: [
@@ -30,7 +31,10 @@ class OnBoardingScreen extends StatelessWidget {
 
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Image.asset(Assets.onboardingOnboarding1),
+                    Image.asset(
+                      Assets.onboardingOnboarding1,
+                      height: size.height * .5,
+                    ), //50% of devices height
 
                     /*
                     * column bellow will not be effected
@@ -39,14 +43,21 @@ class OnBoardingScreen extends StatelessWidget {
 
                     Column(
                       children: [
-                        Text(zOnBoardingTitle1,
-                          style: Theme.of(context).textTheme.headlineLarge,),
-                        Text(zOnBoardingSubTitle1,
+                        Text(
+                          zOnBoardingTitle1,
+                          style: Theme.of(context).textTheme.headlineLarge,
+                        ),
+                        Text(
+                          zOnBoardingSubTitle1,
                           style: Theme.of(context).textTheme.bodyLarge,
-                          textAlign: TextAlign.center,),
+                          textAlign: TextAlign.center,
+                        ),
                       ],
                     ),
                     Text(zOnBoardingCournter1),
+                    SizedBox(
+                      height: 50,
+                    )
                   ],
                 ),
               ),
