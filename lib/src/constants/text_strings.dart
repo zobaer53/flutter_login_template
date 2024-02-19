@@ -11,3 +11,6 @@ const String zOnBoardingTitle3 = 'Practice Clean Code';
 const String zOnBoardingSubTitle1 = 'Start your journey and build ideas into apps';
 const String zOnBoardingSubTitle2 = 'Official documentation is the best place to learn a new thing';
 const String zOnBoardingSubTitle3 = 'Writing code is a art that needs to clean and meaningful';
+const String zOnBoardingCournter1 = '1/3';
+const String zOnBoardingCournter2 = '2/3';
+const String zOnBoardingCournter3 = '3/3';
