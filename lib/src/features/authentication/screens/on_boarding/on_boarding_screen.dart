@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_login_app/src/constants/sizes.dart';
 import 'package:flutter_login_app/src/constants/text_strings.dart';
 import 'package:flutter_login_app/src/features/authentication/models/model_on_boarding.dart';
+import 'package:flutter_login_app/src/features/authentication/screens/on_boarding/widget_on_boarding_screen.dart';
 import 'package:flutter_login_app/src/utils/theme/colors.dart';
 import 'package:liquid_swipe/liquid_swipe.dart';
 
@@ -19,6 +20,8 @@ class OnBoardingScreen extends StatelessWidget {
         children: [
           LiquidSwipe(
             pages: [
+
+              //first screen
               OnBoardingPageWidget(
                 model: OnBoardingModel(
                   image: Assets.onboardingOnboarding1,
@@ -28,6 +31,30 @@ class OnBoardingScreen extends StatelessWidget {
               bgColor: zOnBoardingPage1Color,
               height: size.height
               ),
+              ),
+
+              //second screen
+              OnBoardingPageWidget(
+                model: OnBoardingModel(
+                    image: Assets.onboardingOnboarding2,
+                    title: zOnBoardingTitle2,
+                    subTitle: zOnBoardingSubTitle2,
+                    counterText: zOnBoardingCournter2,
+                    bgColor: zOnBoardingPage2Color,
+                    height: size.height
+                ),
+              ),
+
+              //third screen
+              OnBoardingPageWidget(
+                model: OnBoardingModel(
+                    image: Assets.onboardingOnboarding3,
+                    title: zOnBoardingTitle3,
+                    subTitle: zOnBoardingSubTitle3,
+                    counterText: zOnBoardingCournter3,
+                    bgColor: zOnBoardingPage3Color,
+                    height: size.height
+                ),
               ),
 
             ],
@@ -45,58 +72,4 @@ class OnBoardingScreen extends StatelessWidget {
   }
 }
 
-class OnBoardingPageWidget extends StatelessWidget {
-  const OnBoardingPageWidget({
-    super.key,
-    required this.model,
-  });
 
-  final OnBoardingModel model;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(zDefaultSizes),
-      color: model.bgColor,
-      child: Column(
-        /*
-      * main axis alignment in column means vertical alignment
-      * by default main axis size is max
-      * and cross axis alignment set to center
-      * which is horizontal alignment
-      * */
-
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Image.asset(
-            model.image,
-            height: model.height * 0.5,
-          ), //50% of devices height
-
-          /*
-          * column bellow will not be effected
-          * by main axis alignment space evenly
-          * */
-
-          Column(
-            children: [
-              Text(
-                model.title,
-                style: Theme.of(context).textTheme.headlineLarge,
-              ),
-              Text(
-                model.subTitle,
-                style: Theme.of(context).textTheme.bodyLarge,
-                textAlign: TextAlign.center,
-              ),
-            ],
-          ),
-          Text(model.counterText),
-          SizedBox(
-            height: 50,
-          )
-        ],
-      ),
-    );
-  }
-}
