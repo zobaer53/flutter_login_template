@@ -14,6 +14,8 @@ class OnBoardingPageWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size; // size of the device screen
+
     return Container(
       padding: const EdgeInsets.all(zDefaultSizes),
       color: model.bgColor,
@@ -29,7 +31,7 @@ class OnBoardingPageWidget extends StatelessWidget {
         children: [
           Image.asset(
             model.image,
-            height: model.height * 0.5,
+            height: size.height * 0.5,
           ), //50% of devices height
 
           /*
@@ -41,8 +43,7 @@ class OnBoardingPageWidget extends StatelessWidget {
             children: [
               Text(
                 model.title,
-                style: Theme.of(context).textTheme.headlineLarge,
-              ),
+                style: Theme.of(context).textTheme.headlineLarge,),
               Text(
                 model.subTitle,
                 style: Theme.of(context).textTheme.bodyLarge,
@@ -52,7 +53,7 @@ class OnBoardingPageWidget extends StatelessWidget {
           ),
           Text(model.counterText),
           SizedBox(
-            height: 50,
+            height: 80,
           )
         ],
       ),

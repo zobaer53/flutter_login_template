@@ -16,7 +16,7 @@ class SplashScreenController extends GetxController {
     await Future.delayed(const Duration(milliseconds: 2000));
     Get.off(
       // Get.off Instead of Get.offAll()
-      () => const OnBoardingScreen(),
+      () =>  OnBoardingScreen(),
       duration: const Duration(milliseconds: 1000), //Transition Time
       transition: Transition.fadeIn, //Screen Switch Transition
     );
